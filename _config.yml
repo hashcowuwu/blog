@@ -78,7 +78,7 @@ footer-text: Copyright (c) 2019 来自中世界
 gitalk: enable
   clientID: Ov23li5cVnQrBBtENsJx
   clientSecret: 077e90a9380f6ba80d6637b1819b723bf47ff6a4
-  repo: Hashcat 
+  repo: blog 
   owner: hashcowuwu 
   proxy: https://worker-restless-king-b8ce.erfu81856.workers.dev/?https://github.com/login/oauth/access_token
 

@@ -75,7 +75,7 @@ footer-text: Copyright (c) 2019 来自中世界
 #disqus: loffer #shortname
 
 # 输入Gitalk相关设定，即可添加评论区，具体请看教程
-gitalk: enable
+gitalk: 
   clientID: Ov23li5cVnQrBBtENsJx
   clientSecret: 077e90a9380f6ba80d6637b1819b723bf47ff6a4
   repo: blog 

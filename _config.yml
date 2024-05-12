@@ -80,7 +80,7 @@ gitalk:
   clientSecret: 077e90a9380f6ba80d6637b1819b723bf47ff6a4
   repo: blog 
   owner: hashcowuwu 
-  proxy: Hashcat
+  proxy: 
 
 # 输入Google Analytics web tracking code
 google_analytics:

@@ -14,6 +14,7 @@ paho-mqtt是一个mqtt的python库。
 ## 服务端环境配置
 
 服务器版本:Debian GNU/Linux 12
+
 客户端版本:Arch Linux
 
 ```shell

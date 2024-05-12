@@ -72,14 +72,14 @@ footer-text: Copyright (c) 2019 来自中世界
 #
 
 # 输入Disqus shortname，即可添加评论区，请查阅文档，设置自己的disqus站点，不要继续使用我的站点loffer
-#$disqus: loffer #shortname
+#disqus: loffer #shortname
 
 # 输入Gitalk相关设定，即可添加评论区，具体请看教程
 gitalk:
   clientID: Ov23li5cVnQrBBtENsJx
   clientSecret: 077e90a9380f6ba80d6637b1819b723bf47ff6a4
   repo: blog 
-  owner: hashowuwu 
+  owner: hashcowuwu 
   proxy: Hashcat
 
 # 输入Google Analytics web tracking code

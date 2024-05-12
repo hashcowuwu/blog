@@ -78,9 +78,9 @@ footer-text: Copyright (c) 2019 来自中世界
 gitalk:
   clientID: Ov23li5cVnQrBBtENsJx
   clientSecret: 077e90a9380f6ba80d6637b1819b723bf47ff6a4
-  repo: blog 
+  repo: Hashcat 
   owner: hashcowuwu 
-  proxy: 
+  proxy: https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token
 
 # 输入Google Analytics web tracking code
 google_analytics:

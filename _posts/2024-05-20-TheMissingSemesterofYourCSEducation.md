@@ -147,4 +147,18 @@ root@tux:~/code# source marco.sh
 
 3.测试脚本多少次内能正常运行
 
+```shell
+ #!/usr/bin/bash
+ echo > out.log
+ for ((count=0;;count++))
+ do
+     ./buggy.sh &>> out.log #$?：上一个命令的退出状态
+     if [[ $? -ne 0 ]]; then
+         echo "failed after $count times"
+         break
+
+     fi
+ done
+```
+
 

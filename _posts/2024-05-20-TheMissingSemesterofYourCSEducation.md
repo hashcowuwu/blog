@@ -86,7 +86,7 @@ drwxrwxrwt 22 root root 4096  5月 20 19:17 ../
    27  chmod +x semester 
    28  ./semester 
 ```
-通过shebang加载第一个参数`#!/bin/sh`作为接受输入的文件
+通过shebang加载第一个参数`#!/bin/sh`作为接受输入的文件，`/bin/sh` 和 `/bin/bash`的区别在与`/bin/sh`是POSIX SHELL 在不同系统的实现不同，而且无法支持一些高级特性如数组、关联数组、进程替换等。 `/bin/bash` 是 GNU SHELL 兼任POSIX SHELL
 
 9.通过`| > grep`获取文件内容
 ```shell
@@ -143,4 +143,8 @@ polo(){
 }
 root@tux:~/code# source marco.sh 
 ```
+
+
+3.测试脚本多少次内能正常运行
+
 

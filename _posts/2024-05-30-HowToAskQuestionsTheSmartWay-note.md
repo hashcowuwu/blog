@@ -49,7 +49,9 @@ toc: true
 ## STFW, RTFM, RTFSC
 
 Read The Fucking Manual
+
 STFW（Search The Fucking Web）
+
 Read the fucking source code
 
 

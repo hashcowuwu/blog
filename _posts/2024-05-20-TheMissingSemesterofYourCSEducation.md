@@ -205,17 +205,17 @@ find . -type f -print0 | xargs -0 ls -t
 要执行你记录的宏，输入 @ 后跟寄存器字母。例如，如果你将宏记录在寄存器 a 中，输入 @a 来执行宏。
 重复执行宏：如果你想要多次执行宏，可以使用 @@ 来重复执行最后一次执行的宏，或者使用 `[次数]@[寄存器]` 来指定执行次数。例如，10@a 将执行寄存器 a 中的宏 10 次。
 
-### Solution-数据清洗
+## Solution-数据清洗
 
 
-##### sed
+### sed
 
 sed 是一个基于文本编辑器ed构建的”流编辑器” 。在 sed 中，您基本上是利用一些简短的命令来修改文件，而不是直接操作文件的内容（尽管您也可以选择这样做
 grep 也支持正则表达式
 
 以上都是`-E` 选项
 
-###### 小坑点
+##### 小坑点
 
 sed 和 grep ,正则表达式的区别
 
@@ -236,7 +236,7 @@ Perl兼容的正则表达式（PCRE）：使用-P选项时，grep使用PCRE。PC
 2.统计words文件 (/usr/share/dict/words) 中包含至少三个a 且不以's 结尾的单词个数。这些单词中，出现频率前三的末尾两个字母是什么？ sed的 y命令，或者 tr 程序也许可以帮你解决大小写的问题。共存在多少种词尾两字母组合？还有一个很 有挑战性的问题：哪个组合从未出现过？
 
 
-##### tr 
+#### tr 
 
 tr 是一个 Linux 命令行工具，用于字符转换或删除。它是 "translate" 或 "type" 的缩写。tr 命令通常用于将输入数据中的一组字符转换为另一组字符，或者删除指定的字符。tr 命令非常简单，但功能强大，特别适合处理文本数据。
 
@@ -290,14 +290,14 @@ grep "systemd\[1\]"  starttime.txt | sed -E "s/.*=\ (.*)s\.$/\1/"| sort | tail -
 grep "systemd\[1\]" starttime.txt   | sed -E "s/.*=\ (.*)s\.$/\1/"| sort -r | tail -n1
 ```
 
-##### paste
+#### paste
 
 Merge lines of files
 
 `-d` 指定行间隔字符，`-s` 确定字符（默认tap）
 
 
-#####  bc 
+####  bc 
 
 arbitrary-precision arithmetic language
 

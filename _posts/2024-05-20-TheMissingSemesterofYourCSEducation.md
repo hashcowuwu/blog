@@ -216,6 +216,21 @@ grep 也支持正则表达式
 
 以上都是`-E` 选项
 
+###### 小坑点
+
+sed 和 grep ,正则表达式的区别
+
+sed:元字符转义：在基本的正则表达式（BRE）中，元字符如(, ), {, }, *, +, ?, |, ^, $等需要被转义（即前面加上反斜杠\）才能被当作普通字符处理。而在扩展正则表达式（ERE）中，这些元字符不需要转义。
+捕获组：在BRE中，捕获组使用\(...\)语法，而在ERE中，使用(...)。
+量词：在BRE中，量词如{n,m}需要被转义，即写成\{n,m\}，而在ERE中，可以直接写成{n,m}。
+扩展语法：ERE支持一些额外的语法，如?, +, |等，这些在BRE中需要特殊处理
+
+grep:基本正则表达式（BRE）：默认情况下，grep使用BRE。在BRE中，元字符如(, ), {, }需要被转义（即前面加上反斜杠\）才能被当作普通字符处理。
+扩展正则表达式（ERE）：使用-E选项时，grep使用ERE。在ERE中，元字符(, ), {, }不需要转义。
+Perl兼容的正则表达式（PCRE）：使用-P选项时，grep使用PCRE。PCRE支持更多的特性，如非贪婪匹配、命名捕获组、条件表达式等。
+
+
+
 1.学习正则表达式
 
 
@@ -245,7 +260,78 @@ cat /usr/share/dict/words | tr "A-Z" "a-z" | grep -E "^([^a]*a){3}.*$" | grep -v
 
 sed会在处理是会尝试清除目标文件缓存
 
-4. 查看之前三次重启启动信息中不同的部分(参见 journalctl的-b 选项)。将这一任务分为几个步骤，首先获取之前三次启动的启动日志，也许获取启动日志的命令就有合适的选项可以帮助您提取前三次启动的日志，亦或者您可以使用sed '0,/STRING/d' 来删除STRING匹配到的字符串前面的全部内容。然后，过滤掉每次都不相同的部分，例如时间戳。下一步，重复记录输入行并对其计数(可以使用uniq )。最后，删除所有出现过3次的内容（因为这些内容是三次启动日志中的重复部分）
+4. 找出您最近十次开机的开机时间平均数、中位数和最长时间
+
+
+>小tip 获取开机时的分析图
+[关于systemd-analyze](https://man.archlinux.org/man/systemd-analyze.1)
+
+```shell
+sudo systemd-analyze plot > systemd.svg
+```
+
+编写一个脚本重定向到文件方便处理
+
+```shell
+#!/bin/bash
+
+for i in {0..9}; do 
+    journalctl -b-$i | grep  "Startup finished in"
+done
+```
+
+
+获取开机最长时间
+```shell
+grep "systemd\[1\]"  starttime.txt | sed -E "s/.*=\ (.*)s\.$/\1/"| sort | tail -n1
+```
+获取开机最短时间
+
+```shell
+grep "systemd\[1\]" starttime.txt   | sed -E "s/.*=\ (.*)s\.$/\1/"| sort -r | tail -n1
+```
+
+##### paste
+
+Merge lines of files
+
+`-d` 指定行间隔字符，`-s` 确定字符（默认tap）
+
+
+#####  bc 
+
+arbitrary-precision arithmetic language
+
+UNIX 上的任意精度算术语言,-l设置精度为小数点后20位
+
+
+获取平均时间
+```shell
+grep "systemd\[1\]" starttime.txt | sed -E "s/.*=\ (.*)s\.$/\1/"| paste -sd+ | bc -l | awk '{print $1/10}'
+```
+
+获取中位数
+
+```shell
+grep "systemd\[1\]" starttime.txt | sed -E "s/.*=\ (.*)s\.$/\1/"| sort |paste -sd\  | awk '{print ($5+$6)/2}'
+```
+
+5.查看之前三次重启启动信息中不同的部分
+
+简单改下脚本
+
+```shell
+#!/bin/bash
+for i in {-1..-3}; do 
+    journalctl -b$i | grep  "Startup finished in"
+done
+```
+
+
+
+
+
+
 
 
 

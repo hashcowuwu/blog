@@ -215,7 +215,7 @@ grep 也支持正则表达式
 
 以上都是`-E` 选项
 
-##### 小坑点
+#### 小坑点
 
 sed 和 grep ,正则表达式的区别
 
@@ -236,7 +236,7 @@ Perl兼容的正则表达式（PCRE）：使用-P选项时，grep使用PCRE。PC
 2.统计words文件 (/usr/share/dict/words) 中包含至少三个a 且不以's 结尾的单词个数。这些单词中，出现频率前三的末尾两个字母是什么？ sed的 y命令，或者 tr 程序也许可以帮你解决大小写的问题。共存在多少种词尾两字母组合？还有一个很 有挑战性的问题：哪个组合从未出现过？
 
 
-#### tr 
+### tr 
 
 tr 是一个 Linux 命令行工具，用于字符转换或删除。它是 "translate" 或 "type" 的缩写。tr 命令通常用于将输入数据中的一组字符转换为另一组字符，或者删除指定的字符。tr 命令非常简单，但功能强大，特别适合处理文本数据。
 
@@ -290,14 +290,14 @@ grep "systemd\[1\]"  starttime.txt | sed -E "s/.*=\ (.*)s\.$/\1/"| sort | tail -
 grep "systemd\[1\]" starttime.txt   | sed -E "s/.*=\ (.*)s\.$/\1/"| sort -r | tail -n1
 ```
 
-#### paste
+### paste
 
 Merge lines of files
 
 `-d` 指定行间隔字符，`-s` 确定字符（默认tap）
 
 
-####  bc 
+###  bc 
 
 arbitrary-precision arithmetic language
 

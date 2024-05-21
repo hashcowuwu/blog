@@ -161,4 +161,50 @@ root@tux:~/code# source marco.sh
  done
 ```
 
+4.递归查找hmtl文件
+
+* 用find自带命令，递归在每条目录执行压缩
+
+```shell
+root@tux:~# find . -name "*.html" -type f -exec tar -czvf html_files.tar.gz {} +
+./workspace/dir4/34file.html
+./workspace/dir4/17file.html
+./workspace/dir4/21file.html
+./workspace/dir4/9file.html
+./workspace/dir4/32file.html
+./workspace/dir4/11file.html
+```
+
+* 用xargs
+
+xargs 命令从标准输入读取数据，并将这些数据作为参数传递给指定的命令
+
+```shell
+find  -name "*.html" -type f -print0  | xargs -0 tar -czvf html_files1.tar.gz
+```
+
+5.列出最近是用的文件
+
+```shell
+find . -type f -print0 | xargs -0 ls -t
+```
+
+
+### 编辑器 (Vim)
+
+用了很多年vim所以这章速通了，只记录最后一题
+
+1.（高阶）用 Vim 宏将 XML 转换到 JSON (例子文件)。 尝试着先完全自己做，但是在你卡住的时候可以查看上面宏 章节。
+
+#### vim 中的宏
+
+###### 记录宏
+
+选择一个寄存器(a~z),选择a，键入qa开始记录 在记录模式下，执行你想要记录的编辑命令。例如，你可以移动光标、删除文本、插入文本等,操作完成后q 保存
+
+##### 执行宏
+
+要执行你记录的宏，输入 @ 后跟寄存器字母。例如，如果你将宏记录在寄存器 a 中，输入 @a 来执行宏。
+重复执行宏：如果你想要多次执行宏，可以使用 @@ 来重复执行最后一次执行的宏，或者使用 `[次数]@[寄存器]` 来指定执行次数。例如，10@a 将执行寄存器 a 中的宏 10 次。
+
 

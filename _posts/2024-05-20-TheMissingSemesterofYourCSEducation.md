@@ -8,7 +8,6 @@ comments: true
 toc: true
 ---
 
-## The Missing Semester of Your CS Education  通关记录
 
 #### 本机环境
 

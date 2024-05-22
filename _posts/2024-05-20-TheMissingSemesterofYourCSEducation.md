@@ -321,13 +321,18 @@ grep "systemd\[1\]" starttime.txt | sed -E "s/.*=\ (.*)s\.$/\1/"| sort |paste -s
 
 ```shell
 #!/bin/bash
-for i in {-1..-3}; do 
-    journalctl -b$i | grep  "Startup finished in"
+for i in {0..-2}; do 
+    journalctl -b$i | grep   grep "systemd\[1\]"
 done
 ```
 
+```shell
+ cat last4.txt | sed -E "s/.*systemd\[1\]: //" | sort | uniq -c |  awk '$1 != 3 {print $0}' | wc -l
+371
+```
 
 
+ 
 
 
 

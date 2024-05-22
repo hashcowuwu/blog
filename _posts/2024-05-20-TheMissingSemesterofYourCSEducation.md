@@ -9,7 +9,7 @@ toc: true
 ---
 
 
-#### 本机环境
+## 本机环境
 
 ```shell
 root@tux:~# neofetch 
@@ -36,7 +36,7 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso   CPU: Intel Xeon E5-2673 v3 (2) @ 2.39
 
 ```
 
-### 课程概览与 shell
+## 课程概览与 shell
 
 1.打印shell变量
 
@@ -189,7 +189,7 @@ find . -type f -print0 | xargs -0 ls -t
 ```
 
 
-### 编辑器 (Vim)
+## 编辑器 (Vim)
 
 用了很多年vim所以这章速通了，只记录最后一题
 
@@ -330,6 +330,8 @@ done
  cat last4.txt | sed -E "s/.*systemd\[1\]: //" | sort | uniq -c |  awk '$1 != 3 {print $0}' | wc -l
 371
 ```
+
+## 
 
 
  

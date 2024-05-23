@@ -334,8 +334,22 @@ done
 ## 命令行环境
 
 
+1~3. 创建ssh key连接,和更改服务。很简单直接跳过了
 
+```shell
+ssh-keygen -t rsa -b 4096
+```
+```shell
+ssh -i ~/.ssh/id_rsa username@hostname
+```
  
+```shell
+Host vm
+  User root
+  HostName 172.16.2.133
+  IdentityFile ~/.ssh/id_rsa
+  LocalForward 9999 localhost:8888
+```
 
 
 

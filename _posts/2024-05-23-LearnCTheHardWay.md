@@ -9,6 +9,47 @@ toc: true
 ---
 
 
-本机环境
+## 本机环境
+
+注意本课程在archlinux上可能需要额外配置故使用ubuntu来完成
 
 
+```shell
+            .-/+oossssoo+/-.               root@tux 
+        `:+ssssssssssssssssss+:`           -------- 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 22.04.4 LTS x86_64 
+    .ossssssssssssssssssdMMMNysssso.       Host: VMware Virtual Platform None 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.5.0-35-generic 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 3 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 1751 (dpkg), 9 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: fish 3.3.1 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 1021x1256 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   Terminal: /dev/pts/0 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   CPU: Intel Xeon E5-2673 v3 (2) @ 2.394GHz 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   GPU: 00:0f.0 VMware SVGA II Adapter 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Memory: 547MiB / 3870MiB 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/
+  +sssssssssdmydMMMMMMMMddddyssssssss+                             
+   /ssssssssssshdmNNNNmyNMMMMhssssss/                              
+    .ossssssssssssssssssdMMMNysssso.
+      -+sssssssssssssssssyyyssss+-
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.
+
+```
+
+## 用make来替代python
+
+简而言之
+
+```shell
+cd ~/code 
+vim test.c 
+#include <stdio.h>
+
+int main() {
+	puts("Hello world");
+	return 0;
+}
+make test 
+```

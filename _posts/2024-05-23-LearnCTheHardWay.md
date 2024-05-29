@@ -53,3 +53,20 @@ int main() {
 }
 make test 
 ```
+
+
+如何编写一个Makefile 文件？  
+
+简单的皮包,定义编译指令，定义最终结果
+
+```Makefile
+CFLAGS=-Wall -g
+
+all:ex4
+
+clean:
+        rm -f ex4
+```
+
+
+

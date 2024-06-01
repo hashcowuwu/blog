@@ -352,8 +352,39 @@ Host vm
 ```
 
 
+github ssh 连接方式
 
+生成密钥
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+设置后台ssh服务
 
+```
+eval "$(ssh-agent -s)"
+```
+
+出现报错
+
+```ssh 
+root@tux ~# ssh-add ~/.ssh/id_ed25519
+Could not open a connection to your authentication agent.
+```
+
+```shell
+root@tux ~ [2]# ssh -T git@github.com
+kex_exchange_identification: Connection closed by remote host
+Connection closed by 20.27.177.113 port 22
+```
+
+GFW导致的
+vim ~/.ssh/config
+```
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+```
 
 
 

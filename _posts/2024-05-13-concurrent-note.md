@@ -22,6 +22,7 @@ toc: true
 状态机的增多导致了状态数的指数呈长，几乎无法通过检查状态的方式来保证程序的正确性
 
 >想象一下两个线程同时执行这个函数
+
 ```cpp
 unsigned int balance = 100;
 int* T(void* amt) {

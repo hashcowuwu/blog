@@ -37,7 +37,7 @@ int* T(void* amt) {
 
 ```
 
-![](https://github.com/hashcowuwu/blog/blob/master/images/multithreaded-programming.jpg)
+![](https://blog.bubble.ro/wp-content/uploads/2014/12/multithreaded-programming.jpg)
 
 并发可以被理解为多个状态机同时运行，每个状态机代表一个独立的计算或任务。这些状态机可以并行地执行，即它们的状态转换可以同时发生，而不是按照严格的顺序进行。
 

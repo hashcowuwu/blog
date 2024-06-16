@@ -43,7 +43,8 @@ int* T(void* amt) {
 * 同步需求：状态机之间可能需要同步，以确保数据的一致性和避免竞态条件。
 * 资源共享：状态机可能需要共享资源，如内存、文件等，这需要适当的资源管理策略。
 
-并发的难度在于**现代CPU乱序执行，编译器优化，宽松内存模型**，并发控制则是确保不同计算执行之间的交互或通信的正确顺序，并协调对执行之间共享的资源的访问。
+并发的难度在于**CPU乱序执行，编译器优化，宽松内存模型**，并发控制则是确保不同计算执行之间的交互或通信的正确顺序，并协调对执行之间共享的资源的访问。
+
 
 错误的并发会造成数据竞争(Data Race)，解决并发的最好的方法就是不并发,同步原语通过限制部分并发来实现对程序的协调。通过同步原语来实现并发控制。
 
@@ -81,6 +82,8 @@ int* T(void* amt) {
 # 参考
 
 >Wikipedia  https://en.wikipedia.org/wiki/Concurrency_(computer_science)
+
+>wikipedia https://en.wikipedia.org/wiki/Memory_model_(programming)  
 
 >jyy老师 jyywiki https://jyywiki.cn/OS/2024/lect8.md
 
